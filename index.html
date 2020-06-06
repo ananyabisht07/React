@@ -47,11 +47,11 @@
                 e.preventDefault();
                 console.log('Form submitted',this.state.name);
             }
-
+// we output the data dynamically with the help of '{}' using javascript.
             render (){
                 return (
                     <div className="app-content">
-                        <h1><p>My name is { this.state.name }.</p></h1>
+                        <h1><p>My name is { this.state.name }.</p></h1> 
                         <form onSubmit={this.handleSubmit}>
                            <input type="text" onChange={this.handlechange}/>
                            <button>Submit</button> 

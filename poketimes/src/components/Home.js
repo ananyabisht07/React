@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class Home extends Component{
 
-    state= {
+    state= {  //state is a javascript object that is used to store the data locally and contains data state or UI state.
         posts: [ ]
     }
 
