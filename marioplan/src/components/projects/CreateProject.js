@@ -27,7 +27,7 @@ class CreateProject extends Component {
                         <label htmlFor="title">Title</label>
                         <input type="text" id="title" onChange={this.handleChange} />
                     </div>
-                    <div className="ind">
+                    <div className="input-field">
                         <label htmlFor="content">Project Content</label>
                         <textarea  id="content"  className="materialize-textarea" onChange={this.handleChange} />
                     </div>
