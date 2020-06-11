@@ -21,18 +21,18 @@ class Signin extends Component {
     render(){
         return (
             <div className="container">
-                <form onSubmit={this.handleSubmit} className="white">
-                    <h5 className="grey-text text-darken-3" > Sign In</h5>
+                <form onSubmit={this.handleSubmit} className="style-form">
+                    <h4 className="color" > Sign In</h4>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange} />
+                        <input type="email" id="email" className="color" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange} />
+                        <input type="password" id="password" className="color" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
-                        <button className="btn pink lighten z-depth-0">Login</button>
+                        <button className="btn black lighten z-depth-0">Login</button>
                     </div>
                 </form>
             </div>
