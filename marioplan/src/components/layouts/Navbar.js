@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
+import { isLoaded } from 'react-redux-firebase' 
 
 
 const Navbar = (props) => {
@@ -12,7 +13,7 @@ const Navbar = (props) => {
         <nav className="nav-wrapper grey darken-3">
             <div className="container">
                 <Link to='/' className="brand-logo">MarioPlan</Link>
-                { links }
+                { isLoaded(auth) && links }
             </div>
         </nav>
     );
