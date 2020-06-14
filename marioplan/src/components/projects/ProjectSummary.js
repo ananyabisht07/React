@@ -5,7 +5,7 @@ const ProjectSummary = ({project}) => {
         <div className="card z-depth-0 project-summary style-form">
             <div className="card-content color">
                 <span className="card-title">{project.title}</span>
-                <p>Posted by the Net Ninja.</p>
+                <p>Posted by {project.authorFirstName} {project.authorLastName}</p>
                 <p className="grey-text">32d sep,2019</p>
             </div>
         </div>

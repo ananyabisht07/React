@@ -3,11 +3,13 @@ import firebase from 'firebase/app'
 
 export const createProject = (project) => {
     return (dispatch, getState, { getFirebase,getFirestore }) => {
+            const profile= getState().firebase.profile;
+            const authorId= getState().firebase.auth.uid;
             firebase.firestore().collection('projects').add({
             ...project,
-            authorFirstName: 'Net',
-            authorLastName: 'Ninja',
-            authorId:1234,
+            authorFirstName: profile.firstName,
+            authorLastName: profile.lastName,
+            authorId: authorId,
             createdAt: new Date()
         }).then(() => {
             dispatch({type: 'CREATE_PROJECT', project:project})
