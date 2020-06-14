@@ -7,16 +7,17 @@ import { Redirect } from 'react-router-dom'
 const ProjectDetails = (props) => {
     const { project, auth } = props;
     if(!auth.uid) return <Redirect to='/signin' />
+    
     if (project) {
         return (
-            <div className="container section project-details">
-            <div className="card z-depth-0 ">
+            <div className="container section project-details ">
+            <div className="card z-depth-0 style-form">
                 <div className="card-content ">
-                    <span className="card-title"><h4>{ project.title }</h4></span>
-                    <p>{ project.content }</p>
+                    <span className="card-title color"><h4>{ project.title }</h4></span>
+                    <p className="color">{ project.content }</p>
                     <br />
-                    <div className="card-action grey lighten-4 grey-text">
-                        <div>Posted by { project.authorFirstName } { project.authorLastName } .</div>
+                    <div className="card-action grey lighten-4 black-text">
+                        <div className="">Posted by { project.authorFirstName } { project.authorLastName } .</div>
                         <div>3rd September, 2am</div>
                     </div>
                 </div>
