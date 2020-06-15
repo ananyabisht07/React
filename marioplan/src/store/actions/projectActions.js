@@ -3,6 +3,7 @@ import firebase from 'firebase/app'
 
 export const createProject = (project) => {
     return (dispatch, getState, { getFirebase,getFirestore }) => {
+        //const firebase = getFirebase();
             const profile= getState().firebase.profile;
             const authorId= getState().firebase.auth.uid;
             firebase.firestore().collection('projects').add({
