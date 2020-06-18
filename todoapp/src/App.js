@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Todos from './Todos'
-import AddTodo from './AddTodo'
+import Todos from './Components/Todos'
+import AddTodo from './Components/AddTodo'
 import Header from './Components/Header'
-import './App.css';
+import './Components/App.css';
+//import Footer from './Components/Footer';
 
 class App extends Component {
   state={

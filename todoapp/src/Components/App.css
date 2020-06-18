@@ -1,0 +1,38 @@
+.cardss{
+    margin-bottom: 30px;
+}
+.my-color{
+    background: #0a2b3a;
+}
+.navv{
+    background-color: #0a2b3a;
+    margin-bottom: 40px;
+}
+
+.button-color{
+    background: #0a2b3a !important;
+    padding: 19px !important;
+    margin-top: 5px !important; 
+    font-size: large !important;
+}
+
+.search-button{
+    background: #0a2b3a !important;
+}
+
+.card-body{
+    background: #cce6ff;
+    
+}
+
+.card-color{
+    background: rgb(185, 198, 221);
+    font-weight: bold; 
+    font-size: large;   
+}
+
+.footer{
+    background-color: #D1C4E9;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
