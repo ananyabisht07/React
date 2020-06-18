@@ -39,14 +39,10 @@ textarea.materialize-textarea:focus:not([readonly]){
 }
 
 .style-form {
-  background-color: #49474e;
-  opacity: 50%;
+  background-color: #4b4a4d;
 }
 
 .color{
-  color:white;
+  color:rgb(202, 197, 197);
 }
 
-.text-type{
-  font-size: large;
-}
