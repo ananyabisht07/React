@@ -3,6 +3,8 @@ import Todos from './Components/Todos'
 import AddTodo from './Components/AddTodo'
 import Header from './Components/Header'
 import './Components/App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
+
 //import Footer from './Components/Footer';
 
 class App extends Component {
@@ -29,16 +31,17 @@ class App extends Component {
       todos:todos
     })
   }
-
+//todos={this.state.todos} addTodo={this.addTodo} deleteTodo={this.deleteTodo}
   render(){
     return(
-      <div className="todo-app">
-        <Header />
-        <div className="container">
-          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-          <AddTodo addTodo={this.addTodo} />
-        </div>
-      </div>
+      
+        <BrowserRouter>
+          <div className="todo-app">
+            <Route exact path="/" component={Header} />
+            <Todos  />
+            <AddTodo/>
+          </div>
+        </BrowserRouter>
     )
   }
 }

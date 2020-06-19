@@ -1,18 +1,21 @@
 .cardss{
     margin-bottom: 30px;
 }
-.my-color{
-    background: #0a2b3a;
+
+.form-style{
+    font-weight: bold;
+    font-size: large;
 }
+
 .navv{
-    background-color: #0a2b3a;
+    background-color: #030524;
+    
     margin-bottom: 40px;
 }
 
 .button-color{
     background: #0a2b3a !important;
-    padding: 19px !important;
-    margin-top: 5px !important; 
+    
     font-size: large !important;
 }
 
@@ -21,12 +24,13 @@
 }
 
 .card-body{
-    background: #cce6ff;
+    background: #aac7e2;
+    
     
 }
 
 .card-color{
-    background: rgb(185, 198, 221);
+    background: rgb(126, 165, 231) !important ;
     font-weight: bold; 
     font-size: large;   
 }

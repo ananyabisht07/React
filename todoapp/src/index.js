@@ -5,12 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './Store/reducers/rootReducer'
+
+const store = createStore(rootReducer);
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode><App /></React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
