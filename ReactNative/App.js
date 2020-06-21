@@ -1,7 +1,8 @@
 import  React, {useState} from 'react';
 import { Platform, StyleSheet, Text, View, FlatList} from 'react-native';
 import  Header from './Components/Header'
-
+import TodoItem from './Components/todoItem'
+import AddTodo from './Components/addTodo';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -14,17 +15,34 @@ export default function App() {
     { text: 'create an app', key: '2' },
     { text: 'play on the switch', key: '3' }
   ])
+
+  const pressHandler = (key) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter(todo => todo.key !=key )
+    });
+  }
+
+  const submitHandler = (text) => {
+    setTodos((prevTodos) => {
+      return [
+        { text: text, key: Math.random().toString() },
+        ...prevTodos
+      ]
+    })
+  }
+
     return (
     <View style={styles.container}>
       {/* header */}
       <Header />
       <View style={styles.content}>
         {/* to form */}
+        <AddTodo submitHandler={submitHandler} />
         <View style={styles.list}>
           <FlatList 
             data={todos}
             renderItem={({item}) => (
-              <Text>{item.text}</Text>
+              <TodoItem item={item} pressHandler={pressHandler} />
             )}
           />
         </View>
@@ -43,6 +61,7 @@ const styles = StyleSheet.create({
     padding: 40,
   },
   list: {
-    marginTop: 20
+    marginTop: 20,
+    
   }
 });
