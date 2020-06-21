@@ -1,5 +1,5 @@
 import  React, {useState} from 'react';
-import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -8,13 +8,13 @@ const instructions = Platform.select({
 
 export default function App() {
   const [people, setPeople] = useState([
-    {name:'Ananya', key: '1'},
-    {name:'Garvit', key: '2'},
-    {name:'Suraj', key: '3'},
-    {name:'Sallo', key: '4'},
-    {name:'Dhruv', key: '5'},
-    {name:'Abhi', key: '6'},
-    {name:'Rishabh', key: '7'},
+    {name:'Ananya', id: '1'},
+    {name:'Garvit', id: '2'},
+    {name:'Suraj', id: '3'},
+    {name:'Sallo', id: '4'},
+    {name:'Dhruv', id: '5'},
+    {name:'Abhi', id: '6'},
+    {name:'Rishabh', id: '7'},
   ])
   
   
@@ -22,7 +22,14 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <FlatList 
+        keyExtractor={ (item ) => item.id }
+        data={people}
+        renderItem={({ item }) => (
+          <Text style={styles.item}>{item.name}</Text>
+        )}
+      />
+      {/* <ScrollView>
         { people.map((item) => {
           return (
             <View key={item.key}>
@@ -30,7 +37,7 @@ export default function App() {
             </View>
           )
         })}
-      </ScrollView>
+      </ScrollView> */}
     </View>
     
   );
