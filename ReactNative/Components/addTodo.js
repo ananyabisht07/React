@@ -13,11 +13,16 @@ export default function AddTodo({submitHandler}) {
             <TextInput 
                 style={styles.input}
                 placeholder='new todo...'
-                onChangeText={changeHandler} />
+                onChangeText={changeHandler} 
+                value={text}/>
             <Button 
-                onPress={ () => submitHandler(text) }
+                onPress={ () => {
+                    submitHandler(text);
+                    setText('')
+                }}
                 title='Add Todo' 
-                color='#000066' />
+                color='#0099cc' 
+                />
         </View>
     )
 }
@@ -28,6 +33,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
         paddingVertical: 6,
         borderBottomWidth: 1,
-        borderBottomColor: '#ddd'
-    }
+        borderBottomColor: '#ddd',
+        fontSize:18
+       }
 })
