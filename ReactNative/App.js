@@ -1,5 +1,5 @@
 import  React, {useState} from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
+import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -7,26 +7,30 @@ const instructions = Platform.select({
 });
 
 export default function App() {
-  const [name, setName] = useState('Ananya')
-  const [age, setAge] = useState('20')
+  const [people, setPeople] = useState([
+    {name:'Ananya', key: '1'},
+    {name:'Garvit', key: '2'},
+    {name:'Suraj', key: '3'},
+    {name:'Sallo', key: '4'},
+    {name:'Dhruv', key: '5'},
+    {name:'Abhi', key: '6'},
+    {name:'Rishabh', key: '7'},
+  ])
+  
   
     //setPerson({name:'Dhruv',age:10})
   
   return (
     <View style={styles.container}>
-      <Text>Enter name:</Text>
-      <TextInput 
-        style={styles.input}
-        placeholder='e.g. Ananya Bisht' 
-        onChangeText={(val) => setName(val)}  / >
-
-        <Text>Enter age:</Text>
-        <TextInput 
-          keyboardType='numeric'
-          style={styles.input}
-          placeholder='e.g. 20' 
-          onChangeText={(val) => setAge(val)}  / >
-      <Text>Name: {name}  Age: {age}</Text>
+      <ScrollView>
+        { people.map((item) => {
+          return (
+            <View key={item.key}>
+              <Text style={styles.item}>{item.name}</Text>
+            </View>
+          )
+        })}
+      </ScrollView>
     </View>
     
   );
@@ -35,9 +39,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    //justifyContent: 'center',
+    //alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    padding:40,
+    paddingHorizontal:20
   },
   input: {
     borderWidth:1,
@@ -45,6 +51,12 @@ const styles = StyleSheet.create({
     borderColor: '#777',
     width:200,
     margin:10
+  },
+  item: {
+    marginTop: 20,
+    padding: 30,
+    backgroundColor: 'green',
+    fontSize: 24
   }
   
 });
