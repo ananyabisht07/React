@@ -3,6 +3,7 @@ import { Platform, StyleSheet, Text,TouchableWithoutFeedback, Keyboard, View, Fl
 import  Header from './Components/Header'
 import TodoItem from './Components/todoItem'
 import AddTodo from './Components/addTodo';
+//import Sandbox from './Components/sandbox';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -39,6 +40,7 @@ export default function App() {
   }
 
   return (
+    //<Sandbox />
     <TouchableWithoutFeedback onPress={() => {
       Keyboard.dismiss();
     }}>
@@ -59,7 +61,7 @@ export default function App() {
         </View>
       </View>
     </TouchableWithoutFeedback>
-  );
+   );
 }
 
 const styles = StyleSheet.create({
@@ -68,10 +70,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   content: {
+    flex:1,
     padding: 40,
   },
   list: {
+    flex:1,
     marginTop: 20,
+    backgroundColor: '#ddd',
+    borderRadius: 10,
+    alignItems: 'center'
     
   }
 });
