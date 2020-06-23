@@ -1,0 +1,17 @@
+{
+  "name": "trial",
+  "displayName": "trial",
+  "expo": {
+    "name": "trial",
+    "slug": "expo-template-bare",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
