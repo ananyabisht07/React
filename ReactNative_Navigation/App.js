@@ -17,6 +17,8 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Ionicons } from '@expo/vector-icons';
+
 
 // function HomeScreen({ navigation }) {
 //   return (
@@ -53,10 +55,25 @@ const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
-function createHomeStack() {
+function createHomeStack({navigation}) {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Feed" component={Feed} />
+    <Stack.Navigator screenOptions={{
+        headerStyle: {
+          backgroundColor: '#009387',
+        },
+        headerTitleStyle: {
+          fontWeight: "bold"
+        },
+        headerTitleAlign:"center"
+      }}>
+      <Stack.Screen name="Feed" component={Feed} options={{
+        title:'My Feed',
+        headerLeft: () => (
+          <Ionicons name="md-menu" size={34}  
+          onPress={ () => navigation.openDrawer() }
+          />
+        )
+      }} />
       <Stack.Screen name="Detail" component={Detail} />
       <Stack.Screen name="Top Tabs" children={createTopTabs} />
       <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
