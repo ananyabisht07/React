@@ -47,16 +47,16 @@ import { createStackNavigator } from '@react-navigation/stack'
 // }
 
 const Drawer = createDrawerNavigator();
-//const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
-// function createHomeStack() {
-//   return (
-//     <Stack.Navigator>
-//       <Stack.Screen name="Feed" component={Feed} />
-//       <Stack.Screen name="Detail" component={Detail} />
-//     </Stack.Navigator>
-//   )
-// }
+function createHomeStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Feed" component={Feed} />
+      <Stack.Screen name="Detail" component={Detail} />
+    </Stack.Navigator>
+  )
+}
     
 
 export default class App extends Component {
@@ -66,7 +66,7 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={Feed} />
+          <Drawer.Screen name="Home" children={createHomeStack} />
           <Drawer.Screen name="Contacts" component={Screen1} />
           <Drawer.Screen name="Favourites" component={Screen2} />
           <Drawer.Screen name="Settings" component={Screen3} />
