@@ -59,6 +59,7 @@ function createHomeStack() {
       <Stack.Screen name="Feed" component={Feed} />
       <Stack.Screen name="Detail" component={Detail} />
       <Stack.Screen name="Top Tabs" children={createTopTabs} />
+      <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
     </Stack.Navigator>
   )
 }
@@ -70,6 +71,15 @@ function createTopTabs() {
       <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
       <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
     </MaterialTopTabs.Navigator>
+  )
+}
+function createBottomTabs() {
+  return (
+    <MaterialBottomTabs.Navigator>
+      <MaterialTopTabs.Screen name="Tab 1" component={Tab1} />
+      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
+      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
+    </MaterialBottomTabs.Navigator>
   )
 }
     
