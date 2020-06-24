@@ -1,11 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,StyleSheet } from 'react-native';
 
-import { styles } from './styles'
+//import { styles } from './styles'
 
-Tab1 = () =>
-    <View style={styles.center}>
-        <Text style={styles.title}> Tab 1</Text>
-    </View>
+export default function Tab1() {
+    return(
+        <View style={styles.center}>
+            <Text style={styles.title}> Tab 1</Text>
+        </View>
+    )
+} 
 
-export default Tab1;
+    const styles = StyleSheet.create({
+        center: {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        },
+        title: {
+          fontSize: 36,
+          marginBottom: 16
+        },
+    })

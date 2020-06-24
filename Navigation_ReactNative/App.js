@@ -8,13 +8,15 @@ import Screen1 from './src/screens/drawers/screen1';
 import Screen2 from './src/screens/drawers/screen2';
 import Screen3 from './src/screens/drawers/screen3';
 
-// import Tab1 from './src/screens/tabs/Tab1';
-// import Tab2 from './src/screens/tabs/Tab2';
-// import Tab3 from './src/screens/tabs/Tab3';
+import Tab1 from './src/screens/tabs/Tab1';
+import Tab2 from './src/screens/tabs/Tab2';
+import Tab3 from './src/screens/tabs/Tab3';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 // function HomeScreen({ navigation }) {
 //   return (
@@ -48,13 +50,26 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+const MaterialBottomTabs = createMaterialBottomTabNavigator();
+const MaterialTopTabs = createMaterialTopTabNavigator();
 
 function createHomeStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Feed" component={Feed} />
       <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen name="Top Tabs" children={createTopTabs} />
     </Stack.Navigator>
+  )
+}
+
+function createTopTabs() {
+  return (
+    <MaterialTopTabs.Navigator>
+      <MaterialTopTabs.Screen name="Tab 1" component={Tab1} />
+      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
+      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
+    </MaterialTopTabs.Navigator>
   )
 }
     

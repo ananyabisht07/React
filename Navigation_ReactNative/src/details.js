@@ -8,7 +8,12 @@ class Detail extends Component {
         return (
             <View style={styles.center}>
                 <Text style={styles.title}>Detail Screen</Text>
+                <Button 
+                title='View Top Tabs'
+                onPress={ () => this.props.navigation.navigate('Top Tabs')}
+            />
             </View>
+            
         );
     }
 }
