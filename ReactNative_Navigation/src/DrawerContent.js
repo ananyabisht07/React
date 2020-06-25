@@ -1,4 +1,4 @@
-import React , {useState}  from 'react'
+import React   from 'react'
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import { FontAwesome,MaterialCommunityIcons, Ionicons, MaterialIcons,FontAwesome5} from '@expo/vector-icons'; 
 import {
@@ -6,6 +6,7 @@ import {
     DrawerItem
 } from '@react-navigation/drawer'
 import {
+    useTheme,
     Avatar,
     Title,
     Caption,
@@ -15,12 +16,13 @@ import {
     Switch
 } from 'react-native-paper'
 
-export default function DrawerContent(props) {
-    const [isDarkTheme, setDarkTheme] = useState(false)
+import {AuthContext} from '../components/context'
 
-    const toggleTheme = () => {
-        setDarkTheme(!isDarkTheme)
-    }
+export default function DrawerContent(props) {
+    const paperTheme = useTheme();
+    const { toggleTheme } = React.useContext(AuthContext)
+    
+
     return (
         <View style={{flex:1}}>
             <DrawerContentScrollView {...props} >
@@ -52,36 +54,36 @@ export default function DrawerContent(props) {
                     </View>
                     <Drawer.Section style={styles.drawerSection} >
                         <DrawerItem 
-                            icon={ () => (
-                                <MaterialCommunityIcons name="home-outline" size={38} />
+                            icon={ ({color}) => (
+                                <MaterialCommunityIcons name="home-outline" size={38} color={color} />
                             )}
                             label="Home"
                             onPress={ () => {props.navigation.navigate('Home')}}
                         />
                         <DrawerItem 
-                            icon={ () => (
-                                <MaterialIcons name="person-outline" size={38} color="black" />
+                            icon={ ({color}) => (
+                                <MaterialIcons name="person-outline" size={38} color={color} />
                             )}
                             label="Profile"
                             onPress={ () => {props.navigation.navigate('Profile')}}
                         />
                         <DrawerItem 
-                            icon={ () => (
-                                <FontAwesome5 name="bookmark" size={32} />
+                            icon={ ({color}) => (
+                                <FontAwesome5 name="bookmark" size={32} color={color} />
                             )}
                             label="Bookmarks"
                             onPress={ () => {props.navigation.navigate('Bookmarks')}}
                         />
                         <DrawerItem 
-                            icon={ () => (
-                                <MaterialIcons name="settings" size={34} />
+                            icon={ ({color}) => (
+                                <MaterialIcons name="settings" size={34} color={color} />
                             )}
                             label="Setting"
                             onPress={ () => {props.navigation.navigate('Settings')}}
                         />
                         <DrawerItem 
-                            icon={ () => (
-                                <FontAwesome name="support" size={34} />
+                            icon={ ({color}) => (
+                                <FontAwesome name="support" size={34} color={color} />
                             )}
                             label="Support"
                             onPress={ () => {props.navigation.navigate('Support')}}
@@ -92,7 +94,7 @@ export default function DrawerContent(props) {
                             <View style={styles.preference}>
                                 <Text>Dark Theme</Text>
                                 <View pointerEvents="none">
-                                    <Switch value={isDarkTheme} />
+                                    <Switch value={paperTheme.dark} />
                                 </View>
                             </View>
                         </TouchableWithoutFeedback>
