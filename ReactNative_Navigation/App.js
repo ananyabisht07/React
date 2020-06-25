@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
 import { Button, View } from 'react-native';
 
-import Feed from './src/feed'
-import Detail from './src/details'
-
-import Screen1 from './src/screens/drawers/screen1';
-import Screen2 from './src/screens/drawers/screen2';
-import Screen3 from './src/screens/drawers/screen3';
-
-import Tab1 from './src/screens/tabs/Tab1';
-import Tab2 from './src/screens/tabs/Tab2';
-import Tab3 from './src/screens/tabs/Tab3';
-
+//import createHomeStack from './src/createHomeStack'
+import createBottomTabs from './src/createBottomTabs'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Ionicons } from '@expo/vector-icons';
+//import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 
 
 // function HomeScreen({ navigation }) {
@@ -51,54 +40,13 @@ import { Ionicons } from '@expo/vector-icons';
 // }
 
 const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
-const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const MaterialTopTabs = createMaterialTopTabNavigator();
+//const MaterialTopTabs = createMaterialTopTabNavigator();
 
-function createHomeStack({navigation}) {
-  return (
-    <Stack.Navigator screenOptions={{
-        headerStyle: {
-          backgroundColor: '#009387',
-        },
-        headerTitleStyle: {
-          fontWeight: "bold"
-        },
-        headerTitleAlign:"center"
-      }}>
-      <Stack.Screen name="Feed" component={Feed} options={{
-        title:'My Feed',
-        headerLeft: () => (
-          <Ionicons name="md-menu" size={34}  
-          onPress={ () => navigation.openDrawer() }
-          />
-        )
-      }} />
-      <Stack.Screen name="Detail" component={Detail} />
-      <Stack.Screen name="Top Tabs" children={createTopTabs} />
-      <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
-    </Stack.Navigator>
-  )
-}
 
-function createTopTabs() {
-  return (
-    <MaterialTopTabs.Navigator>
-      <MaterialTopTabs.Screen name="Tab 1" component={Tab1} />
-      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
-      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
-    </MaterialTopTabs.Navigator>
-  )
-}
-function createBottomTabs() {
-  return (
-    <MaterialBottomTabs.Navigator>
-      <MaterialTopTabs.Screen name="Tab 1" component={Tab1} />
-      <MaterialTopTabs.Screen name="Tab 2" component={Tab2} />
-      <MaterialTopTabs.Screen name="Tab 3" component={Tab3} />
-    </MaterialBottomTabs.Navigator>
-  )
-}
+
+// <Drawer.Screen name="Contacts" component={Screen1} />
+// <Drawer.Screen name="Favourites" component={Screen2} />
+// <Drawer.Screen name="Settings" component={Screen3} />
     
 
 export default class App extends Component {
@@ -108,10 +56,8 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" children={createHomeStack} />
-          <Drawer.Screen name="Contacts" component={Screen1} />
-          <Drawer.Screen name="Favourites" component={Screen2} />
-          <Drawer.Screen name="Settings" component={Screen3} />
+          <Drawer.Screen name="Home" component={createBottomTabs} />
+
         </Drawer.Navigator>
       </NavigationContainer>
     );
