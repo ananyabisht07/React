@@ -56,35 +56,35 @@ export default function DrawerContent(props) {
                                 <MaterialCommunityIcons name="home-outline" size={38} />
                             )}
                             label="Home"
-                            onPress={ () => {}}
+                            onPress={ () => {props.navigation.navigate('Home')}}
                         />
                         <DrawerItem 
                             icon={ () => (
                                 <MaterialIcons name="person-outline" size={38} color="black" />
                             )}
                             label="Profile"
-                            onPress={ () => {}}
+                            onPress={ () => {props.navigation.navigate('Profile')}}
                         />
                         <DrawerItem 
                             icon={ () => (
                                 <FontAwesome5 name="bookmark" size={32} />
                             )}
                             label="Bookmarks"
-                            onPress={ () => {}}
+                            onPress={ () => {props.navigation.navigate('Bookmarks')}}
                         />
                         <DrawerItem 
                             icon={ () => (
                                 <MaterialIcons name="settings" size={34} />
                             )}
                             label="Setting"
-                            onPress={ () => {}}
+                            onPress={ () => {props.navigation.navigate('Settings')}}
                         />
                         <DrawerItem 
                             icon={ () => (
                                 <FontAwesome name="support" size={34} />
                             )}
                             label="Support"
-                            onPress={ () => {}}
+                            onPress={ () => {props.navigation.navigate('Support')}}
                         />         
                     </Drawer.Section>
                     <Drawer.Section>
