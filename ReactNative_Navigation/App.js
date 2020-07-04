@@ -20,54 +20,6 @@ import {
 } from 'react-native-paper'
 
 const Drawer = createDrawerNavigator();    
-// const [isDarkTheme, setDarkTheme] = React.useState(false)
-
-// const CustomDefaultTheme = {
-//   ...NavigationDefaultTheme,
-//   ...PaperDefaultTheme,
-//   color: {
-//     ...NavigationDefaultTheme.colors,
-//     ...PaperDefaultTheme.colors
-//   }
-// }
-
-// const CustomDarkTheme = {
-//   ...NavigationDarkTheme,
-//   ...PaperDarkTheme,
-//   color: {
-//     ...NavigationarktTheme.colors,
-//     ...PaperDarkTheme.colors
-//   }
-// }
-
-// const theme = isDarkTheme ? CustomDarkTheme : CustomDefaultTheme;
-
-// const authContext = React.useMemo( () => ({
-//   toggleTheme: () => {
-//     setDarkTheme(isDarkTheme => !isDarkTheme);
-//   }
-// }), [] );
-
-
-// export default class App extends Component {
-  
-
-//   render() {
-//     return (
-//       <PaperProvider theme={theme}>
-//         <NavigationContainer theme={theme} >
-//           <Drawer.Navigator drawerContent={ props => <DrawerContent {...props} /> } >
-//             <Drawer.Screen name="Home" component={createBottomTabs} />
-//             <Drawer.Screen name="Bookmarks" component={BookmarkScreen} />
-//             <Drawer.Screen name="Settings" component={SettingScreen} />
-//             <Drawer.Screen name="Support" component={SupportScreen} />
-//           </Drawer.Navigator>
-//         </NavigationContainer>
-//       </PaperProvider>
-//     );
-//   }
-  
-// }
 
 export default function App () {
   const [isDarkTheme, setDarkTheme] = React.useState(false)

@@ -19,6 +19,7 @@ import {
 import {AuthContext} from '../components/context'
 
 export default function DrawerContent(props) {
+    //console.log("Drawer:",props)
     const paperTheme = useTheme();
     const { toggleTheme } = React.useContext(AuthContext)
     
