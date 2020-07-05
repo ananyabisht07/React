@@ -3,9 +3,11 @@ auth.onAuthStateChanged(user => {
     if (user) {
         db.collection('guides').get().then(snapshot => {
             setupGuides(snapshot.docs);
+            setupUI(user)
         });
     } else {
-        setupGuides([])
+        setupUI();
+        setupGuides([]);
     }
 })
 
@@ -13,7 +15,7 @@ auth.onAuthStateChanged(user => {
 
 // sign up
 const signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', (e) => {
+    signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // get user info
