@@ -3,24 +3,21 @@ const guideList = document.querySelector('.guides');
 const loggedOutLinks = document.querySelectorAll('.logged-out')
 const loggedInLinks = document.querySelectorAll('.logged-in')
 const accountDetails = document.querySelector('.account-details');
-
+const adminItems = document.querySelectorAll('.admin')
 const setupUI = (user) => {
     if (user) {
-        // let userName;
-        // if(data){
-        //     data.forEach(doc => {
-        //         const f_user = doc.data();
-        //         if(f_user.email == user.email){
-        //             userName =  f_user.fname
-        //         }
-        //     })
-        // } <p>Welcome ${userName}</p>
+
+        if(user.admin){
+            adminItems.forEach(item => item.style.display = 'block')
+        }
+        // account info
         db.collection('users').doc(user.uid).get().then(doc => {
             const userInfo = `
             <div>
                 <p>Welcome ${doc.data().fname}</p>
                 <p>Logged in as ${user.email}</p>
                 <div>${doc.data().bio}</div>
+                <div class="pink-text">${user.admin ? 'Admin' : '' }</div>
             </div>`;
             accountDetails.innerHTML = userInfo
 
@@ -31,6 +28,8 @@ const setupUI = (user) => {
         loggedInLinks.forEach(item => item.style.display = 'block')
         loggedOutLinks.forEach(item => item.style.display = 'none')
     } else {
+        adminItems.forEach(item => item.style.display = 'none')
+
         // hide account details
         accountDetails.innerHTML = 'Log in to see Account Details '
         // toggle UI elements
