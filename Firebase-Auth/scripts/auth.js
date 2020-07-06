@@ -3,16 +3,20 @@ auth.onAuthStateChanged(user => {
     if (user) {
         db.collection('guides').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
-            setupUI(user);
+            setupUI(user,null);
         }, function(error) {
             console.log(error.message)
+        })
+        db.collection('users').onSnapshot(snapshot => {
+          
+            setupUI(user,snapshot.docs);
         })
     } else {
         setupUI();
         setupGuides([]);
     }
 })
-
+// console.log
 // create new guide
 const createForm = document.querySelector('#create-form');
 createForm.addEventListener('submit', (e) => {
@@ -38,10 +42,22 @@ const signupForm = document.querySelector('#signup-form');
     // get user info
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
-    //console.log(email, password)
+
+    // user info
+    db.collection('users').add({
+        fname: signupForm['signup-fname'].value,
+        lname: signupForm['signup-lname'].value,
+        email: email
+    }).then(() => {
+        console.log("Submitted")
+    }).catch(err => {
+        console.log(err.message);
+    });
+
     // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
     console.log(cred.user);
+
     // close the signup modal & reset form
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();

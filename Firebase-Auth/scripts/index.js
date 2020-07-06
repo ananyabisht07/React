@@ -4,9 +4,22 @@ const loggedOutLinks = document.querySelectorAll('.logged-out')
 const loggedInLinks = document.querySelectorAll('.logged-in')
 const accountDetails = document.querySelector('.account-details');
 
-const setupUI = (user) => {
+const setupUI = (user,data) => {
     if (user) {
-        const userInfo = `<div><p>Logged in as ${user.email}</p></div>`;
+        let userName;
+        if(data){
+            data.forEach(doc => {
+                const f_user = doc.data();
+                if(f_user.email == user.email){
+                    userName =  f_user.fname
+                }
+            })
+        }
+        const userInfo = `
+            <div>
+                <p>Welcome ${userName}</p>
+                <p>Logged in as ${user.email}</p>
+            </div>`;
         
         // toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'block')
