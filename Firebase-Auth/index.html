@@ -32,7 +32,13 @@
     </div>
     </nav>
 
-     <!-- SIGN UP MODAL -->
+    <!-- ADMIN ACTIONS -->
+    <form class="center-align admin-actions" style="margin: 40px auto; max-width: 300px;" >
+        <input type="email" placeholder="user email" id="admin-email" required />
+        <button class="btn-small yellow darken-2 z-depth-0">Make Admin</button>
+    </form>
+     
+    <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
         <div class="modal-content">
         <h4>Sign up</h4><br />
@@ -120,6 +126,7 @@
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-functions.js"></script>
 
 
     <script>
@@ -140,7 +147,7 @@
     // make auth and firestore refrences
     const auth = firebase.auth();
     const db= firebase.firestore();
-
+    const functions = firebase.functions();
 
     </script>
     <!-- Compiled and minified JavaScript -->

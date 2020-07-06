@@ -1,3 +1,14 @@
+// add admin cloud function
+const adminForm = document.querySelector('.admin-actions');
+adminForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const adminEmail = document.querySelector('#admin-email').value;
+    const addAdminRule = functions.httpsCallable('addAdminRule');
+    addAdminRule({ email: adminEmail }).then(result => {
+        console.log(result);
+    })
+})
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -7,10 +18,7 @@ auth.onAuthStateChanged(user => {
         }, function(error) {
             console.log(error.message)
         })
-        // db.collection('users').onSnapshot(snapshot => {
-        //     console.log('run1');
-        //   setupUI(user,snapshot.docs);
-        // })
+        
     } else {
         setupUI();
         setupGuides([]);
@@ -42,17 +50,6 @@ const signupForm = document.querySelector('#signup-form');
     // get user info
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
-
-    // // user info
-    // db.collection('users').add({
-    //     fname: signupForm['signup-fname'].value,
-    //     lname: signupForm['signup-lname'].value,
-    //     email: email
-    // }).then(() => {
-    //     console.log("Submitted")
-    // }).catch(err => {
-    //     console.log(err.message);
-    // });
 
     // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
