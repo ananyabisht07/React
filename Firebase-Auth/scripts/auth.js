@@ -3,14 +3,14 @@ auth.onAuthStateChanged(user => {
     if (user) {
         db.collection('guides').onSnapshot(snapshot => {
             setupGuides(snapshot.docs);
-            setupUI(user,null);
+            setupUI(user);
         }, function(error) {
             console.log(error.message)
         })
-        db.collection('users').onSnapshot(snapshot => {
-          
-            setupUI(user,snapshot.docs);
-        })
+        // db.collection('users').onSnapshot(snapshot => {
+        //     console.log('run1');
+        //   setupUI(user,snapshot.docs);
+        // })
     } else {
         setupUI();
         setupGuides([]);
@@ -43,26 +43,30 @@ const signupForm = document.querySelector('#signup-form');
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
 
-    // user info
-    db.collection('users').add({
-        fname: signupForm['signup-fname'].value,
-        lname: signupForm['signup-lname'].value,
-        email: email
-    }).then(() => {
-        console.log("Submitted")
-    }).catch(err => {
-        console.log(err.message);
-    });
+    // // user info
+    // db.collection('users').add({
+    //     fname: signupForm['signup-fname'].value,
+    //     lname: signupForm['signup-lname'].value,
+    //     email: email
+    // }).then(() => {
+    //     console.log("Submitted")
+    // }).catch(err => {
+    //     console.log(err.message);
+    // });
 
     // sign up the user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
-
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-signup');
-    M.Modal.getInstance(modal).close();
-    signupForm.reset();
-    });
+        return db.collection('users').doc(cred.user.uid).set({
+            fname: signupForm['signup-fname'].value,
+            lname: signupForm['signup-lname'].value, 
+            bio: signupForm['signup-bio'].value
+        });
+    }).then(() => {
+        // close the signup modal & reset form
+        const modal = document.querySelector('#modal-signup');
+        M.Modal.getInstance(modal).close();
+        signupForm.reset();
+    })
 });
 
 // logout
