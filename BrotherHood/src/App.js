@@ -8,7 +8,7 @@ import Home from './components/Home'
 import './App.css';
 import Header from './components/Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route  path="/contact" component={Contact} />
         </Switch>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

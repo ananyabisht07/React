@@ -101,3 +101,24 @@ body{
   background-color: #fcf8f7;
   border-radius: 14px;
 }
+
+
+.footer-style {
+  background-color: #807978a8;
+  margin-top: 10em;
+}
+
+.footer{
+  background-color: #8e8c92a4;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+  margin-top: 9em;
+
+}
+
+.box{
+  background-color: rgb(75, 80, 80);
+  width: 1533px;
+  height: 65px;
+  color: #fcf8f7;
+}
