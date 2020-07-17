@@ -112,7 +112,7 @@ body {
 
 .pill-button {
   border-radius: 16px;
-  background: #023333  ;
+  background-color: #023333  ;
   width: 105px;
   color: #11dada;
   border: 0em;
@@ -125,7 +125,7 @@ body {
 
 .pill-button1 {
   border-radius: 16px;
-  background: #11dada  ;
+  background-color: #11dada  ;
   width: 130px;
   color:  #023333;
   border: 0em;

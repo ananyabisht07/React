@@ -1,0 +1,103 @@
+body{
+  background: url(/img/bg2.jpg);
+  
+  
+}
+
+.header {
+  background-color: rgba(104, 83, 73, 0.4);
+  color: black;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top:2px ;
+
+}
+.jumbo {
+  background-image: url(/img/img2.jpg);
+  height: 510px;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  z-index: -100;
+}
+
+.jumbo-text {
+  font-size: 50px;
+  margin-top: 2em;
+  margin-left: 2em;
+  color: rgb(244, 247, 250);
+  
+}
+
+.card-grp {
+  margin-top: 20em;
+}
+
+.para {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  
+}
+
+.seperator {
+  margin: 25px 0;
+  border-radius: 60%;
+  width: 300px;
+  height: 8px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inner{
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.cards{
+  transition: 0.5s ease ;
+  cursor: pointer;
+}
+.cards:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 5px 5px rgb(240, 18, 18);
+}
+
+
+.jumbo-banner {
+  background-color: #807978;
+  margin-top: 10em;
+  color: aliceblue;
+}
+
+.banner-img img {
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.headings{
+  color: #585453;
+  font-weight: 550;
+  font-size: 30px;
+  font-family: "Times New Roman";
+  letter-spacing: 1rem;
+}
+.heading1{
+  color: #585453;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Times New Roman";
+}
+
+.card-bg {
+  border: none;
+  background-color: #fcf8f7;
+  border-radius: 14px;
+}
