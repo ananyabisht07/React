@@ -51,6 +51,16 @@ body{
   margin-right: auto;
 }
 
+.seperator1 {
+  margin: 15px 0;
+  border-radius: 60%;
+  width: 170px;
+  height: 7px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .inner{
     overflow: hidden;
     width: 100%;
@@ -76,8 +86,15 @@ body{
 
 .jumbo-banner {
   background-color: #807978;
-  margin-top: 10em;
+  margin-top: 12em;
   color: aliceblue;
+}
+
+.jumbo-banner1 {
+  background-color: #807878;
+  margin-top: 3em;
+  color: rgb(223, 229, 235);
+  border-radius: 50%;
 }
 
 .banner-img img {
@@ -93,7 +110,7 @@ body{
   letter-spacing: 1rem;
 }
 .heading1{
-  color: #585453;
+  color:  #585453;
   font-weight: bold;
   font-size: 30px;
   font-family: "Times New Roman";

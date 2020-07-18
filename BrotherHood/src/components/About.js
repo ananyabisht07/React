@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Container, Image } from 'react-bootstrap'
+import OurTeam from './OurTeam'
 
 class About extends Component{
     render () {
@@ -57,6 +58,10 @@ class About extends Component{
                         </div>      
                     </div>
                 </Container>
+
+                <div>
+                    <OurTeam/>
+                </div>
             </div>
         )
     }

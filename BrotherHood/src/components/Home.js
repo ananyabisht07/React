@@ -3,6 +3,7 @@ import { Card ,Jumbotron, Container, CardDeck} from 'react-bootstrap'
 import Deck from './Deck';
 import Banner from "./Banner";
 import HelpingHand from "./HelpingHand";
+import OurTeam from "./OurTeam";
 import MVM from './MVM';
 
 
@@ -72,6 +73,10 @@ class Home extends Component{
                     </div>
                 </Container>
 
+
+                <div>
+                    <OurTeam />
+                </div>
 
                 <div>
                     <Banner />
