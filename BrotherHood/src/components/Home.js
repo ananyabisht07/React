@@ -12,15 +12,10 @@ class Home extends Component{
     render () {
         return(
             <div>
-                <Jumbotron fluid className="jumbo">
-                    <div className="jumbo-text">
-                        <p>FEED THE HUNGARY,<br/>
-                        HELP THE NEEDY.</p>
-                    </div>
-                </Jumbotron>
+                
                 
 
-                <div style={{marginTop:"17em"}}>
+                <div style={{marginTop:"21em"}}>
                     <MVM />
                 </div>
 

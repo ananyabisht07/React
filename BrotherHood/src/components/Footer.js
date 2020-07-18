@@ -24,7 +24,7 @@ function Footer(props) {
             </div>
         </div>
         <div className="row justify-content-center box" >             
-                <div className="col-auto text-vertical-align ">
+                <div className="col-auto " style={{marginTop:"20px"}}>
                     <p>© Copyright 2018 Ristorante Con Fusion</p>
                 </div>
         </div>
