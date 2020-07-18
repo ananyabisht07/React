@@ -25,7 +25,7 @@ body{
   margin-top: 4em;
   margin-left: 2em;
   color: rgb(244, 247, 250);
-  
+  font-weight: 600;
 }
 
 .card-grp {
@@ -121,4 +121,12 @@ body{
   width: 1533px;
   height: 70px;
   color: #fcf8f7;
+}
+
+.img-animation {
+  transition: 0.5s ease ;
+  cursor: pointer;
+}
+.img-animation:hover {
+  transform: scale(1.1);
 }
