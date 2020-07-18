@@ -9,6 +9,7 @@ import './App.css';
 import Header from './components/Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Footer from './components/Footer'
+import ImageGrid from './components/ImageGrid';
 
 function App() {
   return (
@@ -24,9 +25,15 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
+
+    // {<div>
+    //   <ImageGrid />
+    // </div>}
   );
 }
 
 export default App;
+
+
 
 
