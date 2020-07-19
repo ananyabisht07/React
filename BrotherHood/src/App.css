@@ -151,6 +151,28 @@ body{
   transform: scale(1.1);
 }
 
+
+.form-style{
+  font-size: 20px;
+  font-weight: 700;
+  color: #e7e1e1;
+  margin: 2em;
+}
+.form-card{
+  background-color: rgba(47, 51, 51, 0.904);
+  margin-top: 1em;
+}
+.form-button{
+  border: none;
+  border-radius: 16px;
+  color:#e7e1e1;
+  background-color: #837c7c;
+  font-size: 21px;
+  width: 7em;
+  height: 3em;
+  font-weight: 700;}
+
+
 /* image-grid */
 /* .row .column{
   flex: 12.5%;
