@@ -1,5 +1,5 @@
 import React from 'react'
-import{ Jumbotron, Row, Col, Button, Container} from 'react-bootstrap'
+import{ Jumbotron, Row, Col,  Container} from 'react-bootstrap'
 
 function Banner(){
     return(

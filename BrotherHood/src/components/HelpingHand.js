@@ -1,12 +1,43 @@
-import React, {useState} from 'react'
+import React, { Component} from 'react'
 import { Card, Container, Row, Col, Button, Modal} from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-function HelpingHand (){
-    const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+class HelpingHand extends Component {
     
+    state = {
+        show:false,
+        buttonID:null
+      };
+
+    handleClose = () => {
+        this.setState({
+            show: !this.state.show
+        })
+    }
+
+    handleShow = (e) => {
+        this.setState({
+            show: !this.state.show,
+            buttonID:e.target.id
+        })
+    }
+
+    
+    
+    render() {
+        const { helps } = this.props
+        const helpDisplay = helps.map(help => {
+            if (this.state.buttonID === help.id) {
+            return (
+                <div key={help.id}>
+                    <p> {help.content} </p>
+                </div>
+            )} else {
+                return null
+            }
+        })
+            
         return(
             <Container >
                 <Row>
@@ -18,7 +49,7 @@ function HelpingHand (){
                             <Card.Body className="">
                                 <Card.Title>A helping hand</Card.Title>
                                 <Card.Text>A helping hand is a critical need ...</Card.Text>
-                                <Button style={{backgroundColor:"#706866 ", color:"white",border:"none"}} onClick={handleShow}>READ MORE</Button>
+                                <Button id="1" onClick={this.handleShow} style={{backgroundColor:"#706866 ", color:"white",border:"none"}} >READ MORE</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -30,7 +61,7 @@ function HelpingHand (){
                             <Card.Body className="">
                                 <Card.Title>During Fani</Card.Title>
                                 <Card.Text>During Fani, our team had worked hard...</Card.Text>
-                                <Button style={{backgroundColor:"#706866 ", color:"white",border:"none"}}>READ MORE</Button>
+                                <Button id="2" onClick={this.handleShow} style={{backgroundColor:"#706866 ", color:"white",border:"none"}}>READ MORE</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -42,21 +73,20 @@ function HelpingHand (){
                             <Card.Body className="">
                                 <Card.Title>Covid-19</Card.Title>
                                 <Card.Text>We are at the forefront of Covid-19 ...</Card.Text>
-                                <Button style={{backgroundColor:"#706866 ", color:"white",border:"none"}}>READ MORE</Button>
+                                <Button id="3"onClick={this.handleShow} style={{backgroundColor:"#706866 ", color:"white",border:"none"}}>READ MORE</Button>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton style={{backgroundColor:"#706866 ", color:"white"}}>
+                <Modal show={this.state.show} onHide={this.handleClose}>
+                    <Modal.Header  closeButton style={{backgroundColor:"#706866 ", color:"white"}}>
                     <Modal.Title>A Helping Hand</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        A helping hand is a critical need of the elder who are destitute, sick and abandoned by family and 
-                        those uprooted by disasters. Our team has been working for abandoned,old & aged people towards their rehabilitation.
+                        {helpDisplay}
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button  onClick={this.handleClose} variant="secondary" >
                         Close
                     </Button>
                     </Modal.Footer>
@@ -64,6 +94,14 @@ function HelpingHand (){
             </Container>
         );
     
+    }
+    
 }
 
-export default HelpingHand;
+const mapStateToProps = (state) => {
+    return {
+        helps: state.help
+    }
+}
+
+export default connect(mapStateToProps)(HelpingHand);

@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import { Card ,Jumbotron, Container, CardDeck} from 'react-bootstrap'
+import React from "react"
+import { Container} from 'react-bootstrap'
 import Deck from './Deck';
 import Banner from "./Banner";
 import HelpingHand from "./HelpingHand";

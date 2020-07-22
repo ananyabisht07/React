@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { Container, Image } from 'react-bootstrap'
 import OurTeam from './OurTeam'
 import {motion} from 'framer-motion'
