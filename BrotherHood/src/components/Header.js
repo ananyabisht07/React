@@ -1,14 +1,11 @@
 import React from 'react'
-import { Navbar,Jumbotron } from 'react-bootstrap'
-import { Link, NavLink} from 'react-router-dom'
+import { Navbar } from 'react-bootstrap'
+import {NavLink} from 'react-router-dom'
 import { Nav, NavItem } from 'reactstrap'
 
-// <ul className=" navbar-nav ml-auto" style={{marginRight:40,}}>
-//                         <li><Link to="/">Home <span> </span> </Link></li> 
-//                         <li><NavLink to="/aboutus">ABOUT US</NavLink></li>
-//                         <li><NavLink to="/blog">BLOG</NavLink></li>
-//                         <li><NavLink to="/contact">CONTACT</NavLink></li>
-//                     </ul>
+
+
+
 
 function Header() {
     return (
@@ -38,12 +35,7 @@ function Header() {
                 </Navbar.Collapse>
             
             </Navbar>
-            <Jumbotron fluid className="jumbo">
-                    <div className="jumbo-text">
-                        <p>FEED THE HUNGARY,<br/>
-                        HELP THE NEEDY.</p>
-                    </div>
-            </Jumbotron>
+            
         </div>
     )
 }

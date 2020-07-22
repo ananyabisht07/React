@@ -11,8 +11,11 @@ body{
   font-size: 25px;
   font-weight: bolder;
   margin-top:0px ;
-
+  
 }
+
+
+
 .jumbo {
   background-image: url(/img/bg4.jpg);
   height: 510px;
@@ -29,7 +32,17 @@ body{
   margin-left: 2em;
   color: rgb(244, 247, 250);
   font-weight: 600;
+  animation-name:heading;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  
 }
+
+@keyframes heading {
+  0% { left: -1000px;}
+  100% {left: 0;}
+} 
+
 
 .card-grp {
   margin-top: 20em;

@@ -1,16 +1,18 @@
 import React, { Component } from "react"
 import { Container, Row, Col,  Button, Form, FormControl, Card} from "react-bootstrap";
+import { FadeTransform,} from 'react-animation-components';
+import Jumboo from "./Jumboo";
+import "aos/dist/aos.css"
+import Aos from 'aos'
 
 
 
-// handleSubmit = (values) => {
-//     console.log('Current State is: ' + JSON.stringify(values));
-//     alert('Current State is: ' + JSON.stringify(values));
-//     this.props.resetFeedbackForm();
-// }
 
 
 class Contact extends Component{
+
+    
+      
 
     constructor(props) {
         super(props);
@@ -34,6 +36,13 @@ class Contact extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
     }
+
+    componentDidMount(){
+        Aos.init({
+            duration: 1600,
+            offset: 400
+        })
+      }
 
     handleBlur= (field) => (evt) => {
         this.setState({
@@ -92,13 +101,19 @@ class Contact extends Component{
     
         return(
             <div style={{marginTop:"33em"}}>
-                <Container>
-                    <Row className="justify-content-center">
-                        <img src="img/welcome.png" alt="Welcome" width="200" height="300" />
-                    </Row>
-                </Container>
+                <Jumboo />
+                <FadeTransform in
+                    transformProps={{exitTransform: 'scale(0.3) translateY(-90%)'}}>
+                        <Container>
+                            <Row className="justify-content-center">
+                                <img src="img/welcome.png" alt="Welcome" width="200" height="300" />
+                            </Row>
+                        </Container>
+                    </FadeTransform>
+                
+
                 <Container style={{marginTop:"3em"}}>
-                    <center><h3 className="headings">Get in Touch</h3></center> 
+                    <center><h3 data-aos="fade-right" className="headings">Get in Touch</h3></center> 
                     <Card className="form-card">
                         <Card.Body>
                             <Form onSubmit={this.handleSubmit} className="form-style">
