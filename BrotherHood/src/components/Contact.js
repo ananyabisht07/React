@@ -42,6 +42,7 @@ class Contact extends Component{
             duration: 1600,
             offset: 400
         })
+        window.scrollTo(0, 0)
       }
 
     handleBlur= (field) => (evt) => {

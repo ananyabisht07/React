@@ -13,6 +13,10 @@ function About(){
              offset: 400
         })
     }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
        
         return(
             <div style={{marginTop:"33em"}}>

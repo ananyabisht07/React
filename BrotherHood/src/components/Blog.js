@@ -19,6 +19,7 @@ class Blog extends Component{
             duration: 1800,
             offset: 400
         })
+        window.scrollTo(0, 0)
       }
     render () {
         return(

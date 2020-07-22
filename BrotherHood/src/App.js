@@ -13,7 +13,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter onUpdate={() => window.scrollTo(0, 0)} >
       <Header />
       <div className="">
         <Switch>

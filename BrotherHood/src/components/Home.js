@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
+import "aos/dist/aos.css"
 import Aos from 'aos'
 import { Container} from 'react-bootstrap'
-import "aos/dist/aos.css"
 import Deck from './Deck';
 import Banner from "./Banner";
 import HelpingHand from "./HelpingHand";
@@ -14,12 +14,16 @@ import Jumboo from "./Jumboo";
 
 
 function Home(){
-    useEffect(() => {
+   useEffect(() => {
         Aos.init({ 
             duration: 1600,
-            offset: 400
+             offset: 400
         })
     }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, []);
             return(
             <div>
                 <Jumboo />
