@@ -91,7 +91,7 @@ class Contact extends Component{
         const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email)
     
         return(
-            <div style={{marginTop:"27em"}}>
+            <div style={{marginTop:"33em"}}>
                 <Container>
                     <Row className="justify-content-center">
                         <img src="img/welcome.png" alt="Welcome" width="200" height="300" />

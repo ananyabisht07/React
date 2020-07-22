@@ -17,10 +17,10 @@ function App() {
       <Header />
       <div className="">
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route  path="/aboutus" component={About} />
-          <Route  path="/blog" component={Blog} />
-          <Route  path="/contact" component={Contact} />
+          <Route  path="/home" component={Home} />
+          <Route  exact path="/aboutus" component={About} />
+          <Route  exact path="/blog" component={Blog} />
+          <Route  exact path="/contact" component={Contact} />
         </Switch>
       </div>
       <Footer />

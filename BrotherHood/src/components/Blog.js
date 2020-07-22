@@ -1,13 +1,16 @@
 import React, { Component } from "react"
 import HelpingHand from './HelpingHand'
-import {Container} from 'react-bootstrap'
+import {Container, Row} from 'react-bootstrap'
 
 class Blog extends Component{
     render () {
         return(
-            <div style={{marginTop:"35em"}}>
+            <div style={{marginTop:"37em"}}>
                 <Container style={{marginTop:"10em",}}>
-                    <div className="row" >
+                    <Row className="justify-content-center">
+                        <img src="img/BLOG.webp" alt="Welcome" width="200" height="200" />
+                    </Row>
+                    <div className="row" style={{marginTop:"5em",}}>
                         <div className=" para col-12 col-lg-7 text-center mx-auto ml-auto" >
                             <h2 className="headings">A HELPING HAND</h2>
                             <div className="seperator "> </div>

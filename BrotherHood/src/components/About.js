@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Image } from 'react-bootstrap'
+import { Container, Image , Row} from 'react-bootstrap'
 import OurTeam from './OurTeam'
 import {motion} from 'framer-motion'
 
@@ -25,9 +25,12 @@ function About(){
         }, [lastYPos]);
 
         return(
-            <div style={{marginTop:"35em"}}>
+            <div style={{marginTop:"33em"}}>
+                <Row className="justify-content-center">
+                    <img src="img/aboutus1.webp" alt="Welcome" width="260" height="300" />
+                </Row>
 
-                <div className="" style={{marginTop:"10em",}}>
+                <div className="" style={{marginTop:"1em",}}>
                     <img src="/img/banner.jpg" width="100%" alt="Inspiration"/>
                 </div> 
                 
