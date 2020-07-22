@@ -5,26 +5,28 @@ import Banner from "./Banner";
 import HelpingHand from "./HelpingHand";
 import OurTeam from "./OurTeam";
 import MVM from './MVM';
+import { FadeTransform } from 'react-animation-components';
 
 
 
 
-class Home extends Component{
-    render () {
-        return(
+function Home(){
+    
+            return(
             <div>
-                
-                
-
-                <div style={{marginTop:"21em"}}>
-                    <MVM />
-                </div>
+                <FadeTransform in
+                    transformProps={{exitTransform: 'scale(0.3) translateY(-90%)'}}>
+                    <div style={{marginTop:"21em"}}>
+                        <MVM />
+                    </div>
+                </FadeTransform>
 
 
                 <Container style={{marginTop:"10em",}}>
                     <div className="row" >
                         <div className=" para col-12 col-lg-7 text-center mx-auto ml-auto" >
-                            <h2 className="headings">MOTIVE</h2>
+                            <h2 className="headings show-on-scroll"
+                            >MOTIVE</h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 The only way to do great work is to love what you do & the most important thing within our team is to work 
@@ -45,7 +47,9 @@ class Home extends Component{
                 <Container style={{marginTop:"10em",}}>
                     <div className="row">
                         <div className=" para col-12 col-lg-7 text-center mx-auto ml-auto" >
-                            <h2 className="headings">A SMALL HELP</h2>
+                            <h2 className="headings "
+                               
+                            >A SMALL HELP</h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 Brotherhood global foundation Trust has created a revolution among youngsters, which not only based on ethics but 
@@ -64,7 +68,8 @@ class Home extends Component{
                 <Container style={{marginTop:"10em",}}>
                     <div className="row" >
                         <div className=" para col-12 col-lg-7 text-center mx-auto ml-auto" >
-                            <h2 className="headings">OUR TEAM</h2>
+                            <h2 className="headings show-on-scroll"
+                            >OUR TEAM</h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 We make a difference in the lives of people during a very traumatic time in their life.
@@ -87,7 +92,8 @@ class Home extends Component{
                 <Container style={{marginTop:"10em",}}>
                     <div className="row" >
                         <div className=" para col-12 col-lg-7 text-center mx-auto ml-auto" >
-                            <h2 className="headings">A HELPING HAND</h2>
+                            <h2 className="headings"
+                            >A HELPING HAND</h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 Making a difference by extending a helping hand for a social cause is like prestidigitating the magic of highest prestige.
@@ -104,7 +110,7 @@ class Home extends Component{
 
             </div>
         )
-    }
+    
 }
 
 export default Home;

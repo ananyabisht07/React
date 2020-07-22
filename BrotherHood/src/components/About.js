@@ -1,9 +1,29 @@
 import React, { Component } from "react"
 import { Container, Image } from 'react-bootstrap'
 import OurTeam from './OurTeam'
+import {motion} from 'framer-motion'
 
-class About extends Component{
-    render () {
+function About(){
+    
+        const [lastYPos, setLastYPos] = React.useState(0);
+        const [shouldShowActions, setShouldShowActions] = React.useState(false);
+
+        React.useEffect(() => {
+            function handleScroll() {
+            const yPos = window.scrollY;
+            const isScrollingUp = yPos < lastYPos;
+
+            setShouldShowActions(isScrollingUp);
+            setLastYPos(yPos);
+            }
+
+            window.addEventListener("scroll", handleScroll, false);
+
+            return () => {
+            window.removeEventListener("scroll", handleScroll, false);
+            };
+        }, [lastYPos]);
+
         return(
             <div style={{marginTop:"35em"}}>
 
@@ -14,7 +34,15 @@ class About extends Component{
                 <Container style={{marginTop:"10em",}}>
                     <div className="row justify-content-center" >
                         <div className=" para col-12 col-lg-6 text-center mx-auto ml-auto" style={{marginTop:"3em",}} >
-                            <h2 className="headings">Be the change</h2>
+                            <motion.h2 className="headings"
+                                initial={{ x: -1000 }}
+                                animate={{ x:shouldShowActions ? -1000 : 0 , scale: 1 }}
+                                transition={{
+                                type: "spring",
+                                stiffness: 5,
+                                damping: 55
+                                }}
+                            > Be the change</motion.h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 Brotherhood global foundation Trust the voice of a common man and it stands for the hunger and for poor 
@@ -35,7 +63,15 @@ class About extends Component{
                             <Image  src="img/c13.jpg" alt="img" width="450" height="500" />                        
                         </div> 
                         <div className=" para col-12 col-lg-6 text-center mx-auto ml-auto"style={{marginTop:"5em",}} >
-                            <h2 className="headings">Child Welfare</h2>
+                            <motion.h2 className="headings"
+                                initial={{ x: 2000 }}
+                                animate={{ x:shouldShowActions ? 2000 : 0, scale: 1 }}
+                                transition={{
+                                type: "spring",
+                                stiffness: 5,
+                                damping: 55
+                                }}
+                            >Child Welfare</motion.h2>
                             <div className="seperator "> </div>
                             <p style={{marginTop:30}}>
                                 Our major work based on Child Education, Child health, Save Girl Child, Girl Education, Women health care
@@ -64,7 +100,7 @@ class About extends Component{
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default About;

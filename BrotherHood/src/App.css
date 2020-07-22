@@ -74,13 +74,21 @@ body{
 }
 
 .cards{
-  transition: 0.5s ease ;
+  transition: 0.4s ease ;
   background-color: #fcf8f7;
   cursor: pointer;
 }
 .cards:hover {
   transform: scale(1.1);
   box-shadow: 5px 5px 5px 5px rgb(240, 18, 18);
+}
+
+.imagess{
+  transition: 0.5s ease ;
+  cursor: pointer;
+}
+.imagess:hover {
+  transform: scale(2.1);
 }
 
 
@@ -108,12 +116,25 @@ body{
   font-size: 30px;
   font-family: "Times New Roman";
   letter-spacing: 1rem;
+  position: relative;
+  
 }
+/* animation-name:headings;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; */
+
+/* @keyframes headings {
+  0% { left: -1000px;}
+  100% {left: 0;}
+} */
+
+
 .heading1{
   color:  #585453;
   font-weight: bold;
   font-size: 30px;
   font-family: "Times New Roman";
+  
 }
 
 .card-bg {
@@ -161,6 +182,7 @@ body{
 .form-card{
   background-color: rgba(47, 51, 51, 0.904);
   margin-top: 1em;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.801);
 }
 .form-button{
   border: none;
